@@ -2,7 +2,9 @@
 // also for verifying deatils.
 $(function(){
 
-  var socket = io('/signup');
+  var socket = io('/signup', {
+    transports: ["websocket"]
+  });
 
   var uflag = eflag = pflag = 0;
 

@@ -2676,7 +2676,7 @@
                             }, 0));
                     }),
                 p("xhr data %s", this.data),
-                console.log("data = ",this.data)
+                // console.log("data = ",this.data)
                 r.send(this.data);
             } catch (t) {
               return void setTimeout(function () {
