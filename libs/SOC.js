@@ -54,6 +54,8 @@ module.exports.sockets = function(http){
             }
           }
         }
+
+        console.log("calling onlineStack")
         //for popping connection message.
         ioChat.emit('onlineStack',userStack);
       } //end of sendUserStack function.
