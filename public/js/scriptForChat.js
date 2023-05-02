@@ -12,12 +12,14 @@ $ (function(){
   var toUser;
 
   //passing data on connection.
-  socket.on('connect',function(){
+  socket.on('connect',function()
+  {
     socket.emit('set-user-data',username);
   });//end of connect event.
 
   //receiving onlineStack.
   socket.on('onlineStack',function(stack){
+    console.log("check-deploy") ;
     $('#list').empty();
     $('#list').append($('<li>').append($('<button id="ubtn" class="btn btn-user"></button>').text("Group").css({"font-size":"18px"})));
     var totalOnline = 0;
@@ -31,11 +33,13 @@ $ (function(){
         var txt1 = $('<button id="ubtn" class="btn btn-user"></button>').text(user).css({"font-size":"18px"});
       }
       //setting txt2. shows online status.
-      if(stack[user] == "Online"){
+      if(stack[user] == "Online")
+      {
         var txt2 = $('<span></span>').text("*"+stack[user]).css({"float":"right","color":"#009933","font-size":"18px"});
         totalOnline++;
       }
-      else{
+      else
+      {
         var txt2 = $('<span></span>').text(stack[user]).css({"float":"right","color":"#a6a6a6","font-size":"18px"});
       }
       //listing all users.
@@ -43,6 +47,7 @@ $ (function(){
       $('#totalOnline').text(totalOnline);
     }//end of for.
     $('#scrl1').scrollTop($('#scrl1').prop("scrollHeight"));
+
   }); //end of receiving onlineStack event.
 
 
